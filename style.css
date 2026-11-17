@@ -9,14 +9,14 @@
 
 body {
     font-family: 'JetBrains Mono', 'Courier New', monospace;
-    background-color: #050505; /* Глубокий черный фон */
-    color: #ffffff; /* Яркие белые надписи */
+    background-color: #050505;
+    color: #ffffff;
     line-height: 1.6;
     padding-bottom: 80px;
     position: relative;
     overflow-x: hidden;
 
-    /* Фоновые элементы: кибер-сетка + радиальное неоновое свечение сзади */
+    /* Фоновые элементы: кибер-сетка + свечение */
     background-image: 
         radial-gradient(circle at 50% 0%, rgba(0, 255, 65, 0.12) 0%, transparent 55%),
         radial-gradient(circle at 85% 60%, rgba(0, 210, 255, 0.08) 0%, transparent 45%),
@@ -26,7 +26,7 @@ body {
     background-attachment: fixed;
 }
 
-/* Декоративные фоновые элементы (плавающие символы кода на заднем плане) */
+/* Декоративные фоновые элементы сзади */
 body::before {
     content: "01001000 01010100 01001101 01001100 // SYS.INIT // <ROOT>";
     position: fixed;
@@ -51,7 +51,7 @@ body::after {
     z-index: -1;
 }
 
-/* Верхнее меню (Терминальная панель) */
+/* Верхнее меню */
 .navbar {
     background-color: rgba(10, 10, 10, 0.85);
     backdrop-filter: blur(8px);
@@ -84,24 +84,24 @@ body::after {
 }
 
 .navbar a.active {
-    color: #00ff41; /* Неоновый хакерский зеленый */
+    color: #00ff41;
     border-color: rgba(0, 255, 65, 0.4);
     background-color: rgba(0, 255, 65, 0.08);
     box-shadow: 0 0 12px rgba(0, 255, 65, 0.15);
 }
 
-/* Главный контейнер */
+/* Контейнер */
 .container {
     max-width: 920px;
     margin: 45px auto;
     padding: 0 20px;
 }
 
-/* Главный блок заголовка (Hero) */
+/* Главный блок заголовка */
 .hero {
     background-color: rgba(12, 12, 12, 0.9);
     border: 1px solid #262626;
-    border-left: 4px solid #00ff41; /* Акцентная полоса слева */
+    border-left: 4px solid #00ff41;
     padding: 40px 35px;
     border-radius: 6px;
     margin-bottom: 35px;
@@ -109,7 +109,6 @@ body::after {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
 }
 
-/* Декоративная метка в углу главного блока */
 .hero::after {
     content: "[ TERMINAL_MODE // v2.0 ]";
     position: absolute;
@@ -125,10 +124,8 @@ body::after {
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 12px;
-    letter-spacing: -0.5px;
 }
 
-/* Мигающий курсор после заголовка */
 .hero h1::after {
     content: "_";
     color: #00ff41;
@@ -141,11 +138,11 @@ body::after {
 }
 
 .hero p {
-    color: #d4d4d4;
+    color: #ffffff; /* Сделали текст в шапке чисто белым и ярким */
     font-size: 16px;
 }
 
-/* Сетка карточек теории */
+/* Карточки теории */
 .theory-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -154,7 +151,7 @@ body::after {
 }
 
 .card {
-    background-color: rgba(12, 12, 12, 0.92);
+    background-color: rgba(12, 12, 12, 0.95);
     border: 1px solid #262626;
     padding: 25px;
     border-radius: 6px;
@@ -162,7 +159,6 @@ body::after {
     transition: all 0.25s ease;
 }
 
-/* Угловой декоративный штрих на карточках */
 .card::before {
     content: "+";
     position: absolute;
@@ -176,10 +172,6 @@ body::after {
     transform: translateY(-4px);
     border-color: #00ff41;
     box-shadow: 0 8px 25px rgba(0, 255, 65, 0.12);
-}
-
-.card:hover::before {
-    color: #00ff41;
 }
 
 .card h3 {
@@ -196,39 +188,41 @@ body::after {
     color: #00ff41;
 }
 
+/* ИСПРАВЛЕНО: теперь текст внутри всех карточек гарантированно белыи и яркий */
 .card p {
-    color: #b3b3b3;
+    color: #ffffff !important;
     font-size: 14px;
     margin-bottom: 16px;
 }
 
-/* Стили для тегов кода */
+/* ИСПРАВЛЕНО: Увеличили размер блоков с кодом, чтобы они были заметными */
 code {
-    background-color: #000000;
+    background-color: #111111;
     color: #00ff41;
-    padding: 5px 10px;
+    padding: 8px 12px;
     border-radius: 4px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    display: inline-block;
-    border: 1px solid #1f2937;
+    font-size: 15px; /* Сделали шрифт крупнее */
+    display: block;   /* Сделали блок крупнее вместо мелкой строки */
+    margin-top: 8px;
+    border: 1px solid #333333;
 }
 
 pre {
-    background-color: #000000;
+    background-color: #111111;
     padding: 16px;
     border-radius: 4px;
-    border: 1px solid #262626;
+    border: 1px solid #333333;
     overflow-x: auto;
     margin-top: 12px;
     color: #00ff41;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 /* Блок практики */
 .playground {
-    background-color: rgba(12, 12, 12, 0.92);
-    border: 1px dashed #404040;
+    background-color: rgba(12, 12, 12, 0.95);
+    border: 1px dashed #555555;
     padding: 30px;
     border-radius: 6px;
     margin-bottom: 35px;
@@ -240,11 +234,13 @@ pre {
     margin-bottom: 12px;
 }
 
+/* ИСПРАВЛЕНО: Текст и списки в практике теперь яркие */
 .playground p, .playground li {
-    color: #e5e5e5 !important; /* Перекрываем старые серые цвета внутри списков */
+    color: #ffffff !important;
+    font-size: 16px;
 }
 
-/* Кнопки перехода */
+/* Кнопки */
 .navigation-buttons, .next-step {
     display: flex;
     justify-content: space-between;
@@ -276,12 +272,11 @@ pre {
 .btn-secondary {
     background-color: transparent;
     color: #ffffff;
-    border: 1px solid #404040;
+    border: 1px solid #555555;
 }
 
 .btn-secondary:hover {
     border-color: #ffffff;
     background-color: #171717;
     color: #ffffff;
-    box-shadow: none;
 }
