@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Учим HTML и CSS — Урок 1: HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Навигация по страницам сайта -->
+    <nav class="navbar">
+        <div class="logo">CodeStart</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Урок 1: Основы HTML</a>
+            <a href="css-lesson.html">Урок 2: Стили CSS</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Что такое HTML?</h1>
+            <p><strong>HTML</strong> (HyperText Markup Language) — это скелет любого сайта. С помощью тегов мы объясняем браузеру, где заголовок, где текст, а где кнопка.</p>
+        </header>
+
+        <!-- Блок теории -->
+        <section class="theory-grid">
+            <div class="card">
+                <h3>&lt;h1&gt; — Заголовок</h3>
+                <p>Используется для главных названий на странице. Самый крупный текст.</p>
+                <code>&lt;h1&gt;Привет, мир!&lt;/h1&gt;</code>
+            </div>
+            <div class="card">
+                <h3>&lt;p&gt; — Абзац</h3>
+                <p>Обычный текстовый блок для статей, описаний и заметок.</p>
+                <code>&lt;p&gt;Это простой текст.&lt;/p&gt;</code>
+            </div>
+            <div class="card">
+                <h3>&lt;a&gt; — Ссылка</h3>
+                <p>Позволяет переходить на другие страницы. Адрес пишется в атрибуте <code>href</code>.</p>
+                <code>&lt;a href="#"&gt;Нажми меня&lt;/a&gt;</code>
+            </div>
+        </section>
+
+        <!-- Интерактивная песочница -->
+        <section class="playground">
+            <h2>Попробуй сам!</h2>
+            <p>Измени код слева, и результат справа обновится автоматически:</p>
+            
+            <div class="editor-box">
+                <textarea id="htmlCode" oninput="updatePreview()">
+<h1>Мой первый заголовок</h1>
+<p>Я могу менять этот текст прямо здесь!</p>
+<button>Кнопка</button>
+                </textarea>
+                <iframe id="previewFrame"></iframe>
+            </div>
+        </section>
+
+        <div class="next-step">
+            <a href="css-lesson.html" class="btn">Перейти к Уроку 2: Стили CSS →</a>
+        </div>
+    </main>
+
+    <!-- Небольшой скрипт для работы песочницы -->
+    <script>
+        function updatePreview() {
+            const code = document.getElementById("htmlCode").value;
+            const frame = document.getElementById("previewFrame").contentWindow.document;
+            frame.open();
+            frame.write(code);
+            frame.close();
+        }
+        // Запускаем при загрузке страницы
+        updatePreview();
+    </script>
+
+</body>
+</html>

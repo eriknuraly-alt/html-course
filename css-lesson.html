@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Учим HTML и CSS — Урок 2: CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Навигация (такая же, чтобы удобно переключаться) -->
+    <nav class="navbar">
+        <div class="logo">CodeStart</div>
+        <div class="nav-links">
+            <a href="index.html">Урок 1: Основы HTML</a>
+            <a href="css-lesson.html" class="active">Урок 2: Стили CSS</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Что такое CSS?</h1>
+            <p><strong>CSS</strong> (Cascading Style Sheets) — это одежда и макияж для сайта. Он отвечает за цвета, шрифты, отступы и расположение элементов.</p>
+        </header>
+
+        <!-- Блок теории -->
+        <section class="theory-grid">
+            <div class="card">
+                <h3>color и background</h3>
+                <p><code>color</code> меняет цвет текста, а <code>background</code> — цвет фона элемента.</p>
+                <code>color: white; background: blue;</code>
+            </div>
+            <div class="card">
+                <h3>padding (Отступы)</h3>
+                <p>Создает внутреннее пространство между текстом и рамкой блока.</p>
+                <code>padding: 20px;</code>
+            </div>
+            <div class="card">
+                <h3>border-radius</h3>
+                <p>Скругляет острые углы у кнопок, карточек и картинок.</p>
+                <code>border-radius: 10px;</code>
+            </div>
+        </section>
+
+        <!-- Интерактивная песочница для CSS -->
+        <section class="playground">
+            <h2>Экспериментируй со стилями!</h2>
+            <p>Попробуй поменять цвет фона (например, на <code>crimson</code> или <code>#2ecc71</code>) или скругление углов:</p>
+            
+            <div class="editor-box">
+                <textarea id="cssCode" oninput="updateCssPreview()">
+<style>
+  .box {
+    background-color: #3498db;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    font-family: sans-serif;
+    text-align: center;
+  }
+</style>
+
+<div class="box">
+  <h2>Стильный блок</h2>
+  <p>Измени мои свойства в коде слева!</p>
+</div>
+                </textarea>
+                <iframe id="cssPreviewFrame"></iframe>
+            </div>
+        </section>
+
+        <div class="next-step">
+            <a href="index.html" class="btn btn-secondary">← Вернуться к Уроку 1 (HTML)</a>
+        </div>
+    </main>
+
+    <script>
+        function updateCssPreview() {
+            const code = document.getElementById("cssCode").value;
+            const frame = document.getElementById("cssPreviewFrame").contentWindow.document;
+            frame.open();
+            frame.write(code);
+            frame.close();
+        }
+        updateCssPreview();
+    </script>
+
+</body>
+</html>
