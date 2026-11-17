@@ -280,3 +280,28 @@ pre {
     background-color: #171717;
     color: #ffffff;
 }
+/* Вставлять в самый конец файла style.css после всех остальных строк */
+
+/* 1. Увеличиваем и стилизуем поле ввода кода слева */
+textarea {
+    width: 100%;
+    height: 160px;
+    background-color: #000000;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+    padding: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+
+/* 2. Делаем окно результата справа с белым фоном, чтобы черный текст в нем было четко видно */
+iframe {
+    width: 100%;
+    height: 180px;
+    background-color: #ffffff;
+    border: 2px solid #00ff41;
+    border-radius: 4px;
+}
