@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 3: Отступы и блоки в CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Главная</a>
+        <a href="lesson2.html">Урок 2</a>
+        <a href="lesson3.html" class="active">Урок 3: Отступы</a>
+        <a href="lesson4.html">Урок 4</a>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Урок 3: Отступы (Margin и Padding)</h1>
+            <p>Научимся управлять пространством между элементами и внутри них.</p>
+        </header>
+
+        <section class="theory-grid">
+            <div class="card">
+                <h3>Padding (Внутренний отступ)</h3>
+                <p>Увеличивает пространство <b>внутри</b> блока, отодвигая текст от границ рамки.</p>
+                <code>padding: 20px;</code>
+            </div>
+            <div class="card">
+                <h3>Margin (Внешний отступ)</h3>
+                <p>Создает пустой воздух <b>вокруг</b> элемента, отодвигая его от других блоков.</p>
+                <code>margin: 15px auto;</code>
+            </div>
+        </section>
+
+        <div class="playground">
+<h2>Интерактивная демонстрация блочной модели:</h2>
+<p>Каждый элемент на сайте — это прямоугольная коробка, у которой есть содержимое, внутренний отступ (padding), рамка (border) и внешний отступ (margin).</p>
+        </div>
+
+        <div class="navigation-buttons">
+            <a href="lesson2.html" class="btn btn-secondary">← Назад к Уроку 2</a>
+            <a href="lesson4.html" class="btn">Перейти к Уроку 4 →</a>
+        </div>
+    </main>
+
+</body>
+</html>
