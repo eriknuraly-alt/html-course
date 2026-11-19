@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 5: Видеоуроки по HTML и CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Главная</a>
+        <a href="lesson2.html">Урок 2</a>
+        <a href="lesson3.html">Урок 3</a>
+        <a href="lesson4.html">Урок 4</a>
+        <a href="lesson5.html" class="active">Урок 5: Видеоуроки</a>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Урок 5: Видеоуроки по HTML и CSS</h1>
+            <p>Смотрите разбор базовых тегов и стилей прямо на странице урока и повторяйте за автором.</p>
+        </header>
+
+        <section class="playground">
+            <div class="video-caption">// STREAM_01: ОСНОВЫ HTML ДЛЯ НАЧИНАЮЩИХ (Сергей Дмитриевский)</div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/SKRydSA2bYA"
+                        title="Основы HTML для Начинающих"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+
+            <div class="video-caption">// STREAM_02: ОСНОВЫ CSS ДЛЯ НАЧИНАЮЩИХ (Сергей Дмитриевский)</div>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/mA6EaGs6rak"
+                        title="Основы CSS для Начинающих"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+
+            <h2>Практика после просмотра:</h2>
+            <p>Создайте на своем компьютере тестовый файл, добавьте заголовок, абзац и подключите стили — затем проверьте результат в браузере.</p>
+        </section>
+
+        <section class="theory-grid">
+            <div class="card">
+                <h3>Тег &lt;iframe&gt;</h3>
+                <p>Позволяет встроить внешний видеоплеер или другую веб-страницу внутрь текущего документа.</p>
+                <code>&lt;iframe src="..." allowfullscreen&gt;&lt;/iframe&gt;</code>
+            </div>
+            <div class="card">
+                <h3>Атрибут src</h3>
+                <p>Указывает ссылку на источник видео или документа, который нужно загрузить в плеер.</p>
+                <code>src="https://www.youtube.com/embed/..."</code>
+            </div>
+        </section>
+
+        <div class="navigation-buttons">
+            <a href="lesson4.html" class="btn btn-secondary">← Назад к Уроку 4</a>
+            <a href="index.html" class="btn">На главную</a>
+        </div>
+    </main>
+
+</body>
+</html>
